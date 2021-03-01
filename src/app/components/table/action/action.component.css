@@ -1,0 +1,10 @@
+.action-item {
+  display: flex;
+  justify-content: space-between;
+}
+.action-item p {
+  font-size: 10px;
+}
+.modal-body {
+  width: 20px;
+}

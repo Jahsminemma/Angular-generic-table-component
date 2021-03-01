@@ -1,0 +1,38 @@
+<div class="container-fluid text-center mt-3">
+<table class="table  table-sm">
+    <thead class="table-dark">
+        <tr >
+        <th><input type="checkbox" checked></th>
+            <th scope="col" *ngFor="let col of columns">
+                {{col}}
+            </th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+           <td><input type="checkbox" ></td> 
+            <td class="border-right" *ngFor="let col of index">
+                {{user[col]}}
+            </td>
+            <td class="text-left"><button class="btn" (click)="open(content)"><span class="material-icons action">
+                more_vert
+            </span></button>
+            <div class="action-items"> 
+            <ng-template #content let-modal>
+                <div class="modal-header">
+                    <h2 class="modal-title text-success" id="modal-basic-title ">Action component</h2>
+                    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <app-action></app-action>
+                </div>
+            </ng-template>
+            </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
