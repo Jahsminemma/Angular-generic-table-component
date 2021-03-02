@@ -1,5 +1,5 @@
 <div class="container-fluid text-center mt-3">
-<table class="table  table-sm">
+<table class="table  table-sm text-center">
     <thead class="table-dark">
         <tr >
         <th><input type="checkbox" checked></th>
@@ -15,7 +15,7 @@
             <td class="border-right" *ngFor="let col of index">
                 {{user[col]}}
             </td>
-            <td class="text-left"><button class="btn" (click)="open(content)"><span class="material-icons action">
+            <td><button class="btn" (click)="open(content)"><span class="material-icons action">
                 more_vert
             </span></button>
             <div class="action-items"> 
@@ -27,7 +27,26 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <app-action></app-action>
+                <div class="action">
+                    <div class="action-item">
+                        <span (click)="UserClicked(user)" class="material-icons action">
+                            dialpad
+                        </span>
+                        <p>Redial</p>
+                    </div>
+                    <div class="action-item">
+                        <span (click)="UserClicked(user)" class="material-icons">
+                            voicemail
+                        </span>
+                        <p>Check voicemail</p>
+                    </div>
+                    <div class="action-item">
+                        <span (click)="UserClicked(user)" class="material-icons">
+                            notifications_off
+                        </span>
+                        <p>Disable alerts</p>
+                    </div>
+                </div>
                 </div>
             </ng-template>
             </div>

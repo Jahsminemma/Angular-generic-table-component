@@ -2,7 +2,6 @@ import { Component, OnInit} from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Users } from 'src/app/model/User';
 import { UserService } from 'src/app/user.service';
-
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -10,6 +9,7 @@ import { UserService } from 'src/app/user.service';
 })
 export class TableComponent implements OnInit {
   closeResult = '';
+
   
   //injecting custom service
   constructor(private userservice: UserService, private modalService: NgbModal) { } 
@@ -21,17 +21,18 @@ export class TableComponent implements OnInit {
   /*this can be changed if the api 
     fields is changed and the model as well
   */
-  index = ["id", "first_name", " last_name", "email"]
+  index = ["id", "first_name", "last_name", "email"]
   
   users: Users[] = [];
 
 
+
   ngOnInit(): void {
 
-    //fetchin data from the rest api
+    //fetching data from the rest api
     this.userservice.getUsers().subscribe(
-      (response)=>{
-        this.users = response
+      (response : any)=>{
+       this.users = response.data
         
       },
       (error: any) => {
@@ -59,6 +60,14 @@ open(content: any) {
       return `with: ${reason}`;
     }
   }
+
+
+  selectedUser:any
+UserClicked(userDetails: any){
+  this.selectedUser = userDetails;
+  const output = `FIRST NAME: ${this.selectedUser.first_name}  LAST NAME: ${this.selectedUser.last_name} EMAIL: ${this.selectedUser.email}`
+  alert(output)
+}
 }
 
 

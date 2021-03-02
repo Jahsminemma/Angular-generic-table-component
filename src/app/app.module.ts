@@ -6,8 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
 
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ActionComponent } from './components/table/action/action.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -16,7 +16,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     AppComponent,
     TableComponent,
-    ActionComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +23,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     BrowserAnimationsModule,
     NgbModule,
+
   
   ],
   providers: [],
