@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { Users } from 'src/app/model/User';
-import { UserService } from 'src/app/user.service';
+import { Users } from '../../model/User';
+import { UserService } from '../../user.service';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
